@@ -1,0 +1,41 @@
+
+main header h1 {
+    margin-bottom: 0;
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+body {
+    background-image: url("/public/img/bg/cinema-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.card-info {
+    max-width: 180px;
+    min-width: 150px;
+}
+.card-info h5 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.card-info h5 a:hover {
+    color: #6c757d !important;
+}
+.bill-container {
+    overflow: hidden;
+}
+img.card-img-top {
+    transition: transform 0.3s ease;
+}
+.bill:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+.pagination {
+    --bs-pagination-color: var(--bs-gray);
+    --bs-pagination-hover-color: var(--bs-yellow);
+    --bs-pagination-border-width: none;
+    --bs-pagination-bg: unset;
+    --bs-pagination-hover-bg: rgba(255, 193, 7, 0.1);
+}
