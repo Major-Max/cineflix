@@ -10,7 +10,7 @@
     <header class=" d-flex
                     justify-content-between
                     align-items-center
-                    px-3 pb-2
+                    px-3 py-1
                     border-bottom border-light-subtle
                     bg-dark-subtle "
     >
@@ -57,6 +57,7 @@
         <header class="d-flex
                        justify-content-around
                        align-items-center
+                       position-relative
                        mt-4
                        border-top border-bottom border-dark">
             <h1 class="flex-grow-1 ms-5">Films en salles</h1>
@@ -68,86 +69,148 @@
                 </form>
             </search>
 
-            <div class="btn-group me-5">
-                <button type="button" class="btn btn-outline-warning btn-sm">Filter</button>
-                <button type="button" class="btn btn-outline-warning btn-sm dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                    <span class="visually-hidden">Toggle Dropdown</span>
-                </button>
-                <ul class="dropdown-menu dropdown-menu-end">
-                    <li><h6 class="dropdown-header">Catégories</h6></li>
-                    <li class="px-3 pb-2">
-                        <input id="Animation" class="form-check-input" name="animation" type="checkbox" value="">
-                        <label class="form-check-label" for="Animation">Animation</label>
-                    </li>
-                    <li class="px-3 pb-2">
-                        <input id="Aventure" class="form-check-input" name="" type="checkbox" value="">
-                        <label class="form-check-label" for="Aventure">Aventure</label>
-                    </li>
-                    <li class="px-3 pb-2">
-                        <input id="Biopic" class="form-check-input" name="" type="checkbox" value="">
-                        <label class="form-check-label" for="Biopic">Biopic</label>
-                    </li>
-                    <li class="px-3 pb-2">
-                        <input id="Comédie" class="form-check-input" name="" type="checkbox" value="">
-                        <label class="form-check-label" for="Comédie">Comédie</label>
-                    </li>
-                    <li class="px-3 pb-2">
-                        <input id="ComédieDramatique" class="form-check-input" name="" type="checkbox" value="">
-                        <label class="form-check-label" for="ComédieDramatique">Comédie Dramatique</label>
-                    </li>
-                    <li class="px-3 pb-2">
-                        <input id="Divers" class="form-check-input" name="" type="checkbox" value="">
-                        <label class="form-check-label" for="Divers">Divers</label>
-                    </li>
-                    <li class="px-3 pb-2">
-                        <input id="Drame" class="form-check-input" name="" type="checkbox" value="">
-                        <label class="form-check-label" for="Drame">Drame</label>
-                    </li>
-                    <li class="px-3 pb-2">
-                        <input id="EpouvanteHorreur" class="form-check-input" name="" type="checkbox" value="">
-                        <label class="form-check-label" for="EpouvanteHorreur">Epouvante-Horreur</label>
-                    </li>
-                    <li class="px-3 pb-2">
-                        <input id="Famille" class="form-check-input" name="" type="checkbox" value="">
-                        <label class="form-check-label" for="Famille">Famille</label>
-                    </li>
-                    <li class="px-3 pb-2">
-                        <input id="Fantastique" class="form-check-input" name="" type="checkbox" value="">
-                        <label class="form-check-label" for="Fantastique">Fantastique</label>
-                    </li>
-                    <li class="px-3 pb-2">
-                        <input id="Guerre" class="form-check-input" name="" type="checkbox" value="">
-                        <label class="form-check-label" for="Guerre">Guerre</label>
-                    </li>
-                    <li class="px-3 pb-2">
-                        <input id="Historique" class="form-check-input" name="" type="checkbox" value="">
-                        <label class="form-check-label" for="Historique">Historique</label>
-                    </li>
-                    <li class="px-3 pb-2">
-                        <input id="Musical" class="form-check-input" name="" type="checkbox" value="">
-                        <label class="form-check-label" for="Musical">Musical</label>
-                    </li>
-                    <li class="px-3 pb-2">
-                        <input id="Policier" class="form-check-input" name="" type="checkbox" value="">
-                        <label class="form-check-label" for="Policier">Policier</label>
-                    </li>
-                    <li class="px-3 pb-2">
-                        <input id="Romance" class="form-check-input" name="" type="checkbox" value="">
-                        <label class="form-check-label" for="Romance">Romance</label>
-                    </li>
-                    <li class="px-3 pb-2">
-                        <input id="ScienceFiction" class="form-check-input" name="" type="checkbox" value="">
-                        <label class="form-check-label" for="ScienceFiction">Science Fiction</label>
-                    </li>
-                    <li class="px-3 pb-2">
-                        <input id="Thriller" class="form-check-input" name="" type="checkbox" value="">
-                        <label class="form-check-label" for="Thriller">Thriller</label>
-                    </li>
-                    <li class="px-3 pb-2">
-                        <input id="Western" class="form-check-input" name="" type="checkbox" value="">
-                        <label class="form-check-label" for="Western">Western</label>
-                    </li>
-                </ul>
+            <button type="button" class="btn btn-outline-warning btn-sm me-5" data-bs-toggle="collapse" data-bs-target="#collapseFiltre" aria-expanded="false" aria-controls="collapseFiltre">>Filter</button>
+
+            <div id="collapseFiltre" class="container position-absolute top-100 z-3 collapse">
+                <div class="card card-body flex-row align-items-center rounded-top-0">
+                    <div class="dropdown-center me-5">
+                        <button type="button" class="btn btn-sm btn-outline-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Catégories</button>
+                        <ul class="dropdown-menu overflow-y-scroll">
+                            <li class="px-3 pb-2">
+                                <input id="Animation" class="form-check-input" name="animation" type="checkbox" value="">
+                                <label class="form-check-label" for="Animation">Animation</label>
+                            </li>
+                            <li class="px-3 pb-2">
+                                <input id="Aventure" class="form-check-input" name="" type="checkbox" value="">
+                                <label class="form-check-label" for="Aventure">Aventure</label>
+                            </li>
+                            <li class="px-3 pb-2">
+                                <input id="Biopic" class="form-check-input" name="" type="checkbox" value="">
+                                <label class="form-check-label" for="Biopic">Biopic</label>
+                            </li>
+                            <li class="px-3 pb-2">
+                                <input id="Comédie" class="form-check-input" name="" type="checkbox" value="">
+                                <label class="form-check-label" for="Comédie">Comédie</label>
+                            </li>
+                            <li class="px-3 pb-2">
+                                <input id="ComédieDramatique" class="form-check-input" name="" type="checkbox" value="">
+                                <label class="form-check-label" for="ComédieDramatique">Comédie Dramatique</label>
+                            </li>
+                            <li class="px-3 pb-2">
+                                <input id="Divers" class="form-check-input" name="" type="checkbox" value="">
+                                <label class="form-check-label" for="Divers">Divers</label>
+                            </li>
+                            <li class="px-3 pb-2">
+                                <input id="Drame" class="form-check-input" name="" type="checkbox" value="">
+                                <label class="form-check-label" for="Drame">Drame</label>
+                            </li>
+                            <li class="px-3 pb-2">
+                                <input id="EpouvanteHorreur" class="form-check-input" name="" type="checkbox" value="">
+                                <label class="form-check-label" for="EpouvanteHorreur">Epouvante-Horreur</label>
+                            </li>
+                            <li class="px-3 pb-2">
+                                <input id="Famille" class="form-check-input" name="" type="checkbox" value="">
+                                <label class="form-check-label" for="Famille">Famille</label>
+                            </li>
+                            <li class="px-3 pb-2">
+                                <input id="Fantastique" class="form-check-input" name="" type="checkbox" value="">
+                                <label class="form-check-label" for="Fantastique">Fantastique</label>
+                            </li>
+                            <li class="px-3 pb-2">
+                                <input id="Guerre" class="form-check-input" name="" type="checkbox" value="">
+                                <label class="form-check-label" for="Guerre">Guerre</label>
+                            </li>
+                            <li class="px-3 pb-2">
+                                <input id="Historique" class="form-check-input" name="" type="checkbox" value="">
+                                <label class="form-check-label" for="Historique">Historique</label>
+                            </li>
+                            <li class="px-3 pb-2">
+                                <input id="Musical" class="form-check-input" name="" type="checkbox" value="">
+                                <label class="form-check-label" for="Musical">Musical</label>
+                            </li>
+                            <li class="px-3 pb-2">
+                                <input id="Policier" class="form-check-input" name="" type="checkbox" value="">
+                                <label class="form-check-label" for="Policier">Policier</label>
+                            </li>
+                            <li class="px-3 pb-2">
+                                <input id="Romance" class="form-check-input" name="" type="checkbox" value="">
+                                <label class="form-check-label" for="Romance">Romance</label>
+                            </li>
+                            <li class="px-3 pb-2">
+                                <input id="ScienceFiction" class="form-check-input" name="" type="checkbox" value="">
+                                <label class="form-check-label" for="ScienceFiction">Science Fiction</label>
+                            </li>
+                            <li class="px-3 pb-2">
+                                <input id="Thriller" class="form-check-input" name="" type="checkbox" value="">
+                                <label class="form-check-label" for="Thriller">Thriller</label>
+                            </li>
+                            <li class="px-3 pb-2">
+                                <input id="Western" class="form-check-input" name="" type="checkbox" value="">
+                                <label class="form-check-label" for="Western">Western</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-center me-5">
+                        <button type="button" class="btn btn-sm btn-outline-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Villes</button>
+                        <ul class="dropdown-menu overflow-y-scroll">
+                            <li class="px-3 pb-2">
+                                <input id="Auray" class="form-check-input" name="auray" type="checkbox" value="">
+                                <label class="form-check-label" for="Auray">Auray</label>
+                            </li>
+                            <li class="px-3 pb-2">
+                                <input id="Carnac" class="form-check-input" name="carnac" type="checkbox" value="">
+                                <label class="form-check-label" for="Carnac">Carnac</label>
+                            </li>
+                            <li class="px-3 pb-2">
+                                <input id="Etel" class="form-check-input" name="etel" type="checkbox" value="">
+                                <label class="form-check-label" for="Etel">Etel</label>
+                            </li>
+                            <li class="px-3 pb-2">
+                                <input id="Le_Palais" class="form-check-input" name="le_palais" type="checkbox" value="">
+                                <label class="form-check-label" for="Le_Palais">Le Palais</label>
+                            </li>
+                            <li class="px-3 pb-2">
+                                <input id="Lanester" class="form-check-input" name="lanester" type="checkbox" value="">
+                                <label class="form-check-label" for="Lanester">Lanester</label>
+                            </li>
+                            <li class="px-3 pb-2">
+                                <input id="Locminé" class="form-check-input" name="locminé" type="checkbox" value="">
+                                <label class="form-check-label" for="Locminé">Locminé</label>
+                            </li>
+                            <li class="px-3 pb-2">
+                                <input id="Lorient" class="form-check-input" name="lorient" type="checkbox" value="">
+                                <label class="form-check-label" for="Lorient">Lorient</label>
+                            </li>
+                            <li class="px-3 pb-2">
+                                <input id="Quiberon" class="form-check-input" name="quiberon" type="checkbox" value="">
+                                <label class="form-check-label" for="Quiberon">Quiberon</label>
+                            </li>
+                            <li class="px-3 pb-2">
+                                <input id="Pontivy" class="form-check-input" name="pontivy" type="checkbox" value="">
+                                <label class="form-check-label" for="Pontivy">Pontivy</label>
+                            </li>
+                            <li class="px-3 pb-2">
+                                <input id="Sarzeau" class="form-check-input" name="sarzeau" type="checkbox" value="">
+                                <label class="form-check-label" for="Sarzeau">Sarzeau</label>
+                            </li>
+                            <li class="px-3 pb-2">
+                                <input id="Vannes" class="form-check-input" name="sannes" type="checkbox" value="">
+                                <label class="form-check-label" for="Vannes">Vannes</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pe-0 me-5">
+                        <label class="form-check-label" for="Date">Date</label>
+                        <input id="Date" type="date"> /
+                        <input id="Date2" type="date">
+                    </div>
+
+                    <div class="pe-0">
+                        <label class="form-check-label" for="Time">Horaires</label>
+                        <input id="Time" type="time"> /
+                        <input id="Time2" type="time">
+                    </div>
+                </div>
             </div>
         </header>
         <section class="container d-flex justify-content-center row-gap-4 column-gap-4 flex-wrap mt-4">
