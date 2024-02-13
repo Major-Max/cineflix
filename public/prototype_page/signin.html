@@ -2,8 +2,8 @@
 <html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../css/style.css"/>
     <title>CinéFlix</title>
 </head>
 <body class="bg-black">
@@ -45,41 +45,23 @@
                             </g>
                         </svg>
                     </a>
-                    <h1 class="mx-xl-4 mx-sm-4">Votre cinéma à portée de main</h1>
-                    <p class="mx-xl-5 mx-sm-4 mb-1">Explorez les films près de chez vous!</p>
-                    <p class="mx-xl-5 mx-sm-4">Vous avez déjà un compte? <a href="signin.html">Connexion!</a></p>
+                    <h1 class="mx-xl-4 mx-sm-4">Content de vous revoir</h1>
+                    <p class="mx-xl-5 mx-sm-4">Nouveau ici? <a href="signout.html">Créer un compte</a></p>
                 </header>
-                <form action="#" id="Signout" class="d-flex justify-content-center flex-wrap row-gap-2 column-gap-4 mx-auto mb-5">
-                    <div class="flex-grow-1">
-                        <label for="Name">Nom</label>
-                        <input type="text" id="Name" name="name" class="form-control mb-2">
+                <form action="#" class="d-flex flex-column align-items-center row-gap-2 mb-5">
+                    <label for="Identifiant" class="w-50">Identifiant</label>
+                    <input type="email" id="Identifiant" name="email" class="form-control w-50 mb-2">
+                    <label for="Password" class="w-50">Mot de passe</label>
+                    <input type="password" id="Password" name="password" class="form-control w-50 mb-2">
+                    <div class="w-50">
+                        <input type="checkbox" id="RememberCheck" class="form-check-input">
+                        <label for="RememberCheck" class="form-check-label">Se souvenir de moi?</label>
                     </div>
-                    <div class="flex-grow-1">
-                        <label for="Firstname">Prénom</label>
-                        <input type="text" id="Firstname" name="firstname" class="form-control mb-2">
-                    </div>
-                    <div class="col-12">
-                        <label for="Email">Email</label>
-                        <input type="email" id="Email" name="email" class="form-control mb-2">
-                    </div>
-                    <div class="flex-grow-1">
-                        <label for="Password">Mot de passe</label>
-                        <input type="password" id="Password" name="password" class="form-control mb-2">
-                    </div>
-                    <div class="flex-grow-1">
-                        <label for="PasswordConfirm">Confirmer le mot de passe</label>
-                        <input type="password" id="PasswordConfirm" name="password_confirm" class="form-control mb-2">
-                    </div>
-                    <button type="submit" class="btn btn-warning w-50 mt-4">Connexion</button>
+                    <a href="#" class="w-50 mb-2">Mot de passe oublié?</a>
+                    <button type="submit" class="btn btn-warning w-50">Connexion</button>
                 </form>
             </div>
-            <div class="col-6 order-0 d-flex justify-content-center my-auto">
-                <ul class="m-0 list-unstyled">
-                    <li class="my-3">Consultez les films à l'affiche dans les salles près de chez vous</li>
-                    <li class="my-3">Acheter vos billets</li>
-                    <li class="my-3">Accumulez des point et accédez à une selection de films en streaming</li>
-                    <li class="my-3">Notez les films</li>
-                </ul>
+            <div class="col-6 order-0">
             </div>
         </section>
     </main>
@@ -89,7 +71,7 @@
                    bg-dark-subtle">
         footer
     </footer>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
